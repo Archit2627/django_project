@@ -1,0 +1,54 @@
+<style>
+    ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+    }
+    li{
+        float: right;
+    }
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+}
+li a:hover {
+  background-color:#4CAF50;
+}
+
+.full-card{
+    background-color: grey;
+    width: 35%;
+    margin-left: 150px;
+}
+</style>
+<html>
+    <head>
+        <title>BLOG HOME</title>
+    </head>
+    <body>
+        <div class="navigation">
+            <nav clas="nav-container">
+                <ul class="nav-list">
+                    <li style='float:left; color: honeydew; display: block; padding: 14px 16px;'>Django Blog </li>
+                    <li><a href="/about/">About</a></li>
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'logout' %}">Logout</a></li>
+                        <li><a href="{% url 'profile' %}">Profile</a></li>
+                    {% else %}
+                        <li><a href="{% url 'login' %}">Login</a></li>
+                        <li><a href="/register">Register</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+        <br>
+      <div>
+          <h1>Blog Home</h1>
+      </div> 
+    </body>
+</html> 

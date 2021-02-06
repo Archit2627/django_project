@@ -1,0 +1,73 @@
+<style>
+    body{
+        background-color: white;
+    }
+    h3{
+        text-align: center;
+    }
+    .container{
+        margin-left: 350px;
+        margin-top: 40px;
+        margin-right: 150px;
+        text-align: justify;
+        background-color:white;
+        border: 3px solid lightgray;
+        border-radius: 5px;
+        padding: 2em;
+        width: 35%;
+    }
+    .form-container{
+        color: rgb(41, 38, 38);
+        font-size: larger;
+        font-weight: 400;
+        box-shadow: 10px #aaaaaa;
+    }
+    .sign-btn{
+        padding: 7px 7px 7px 7px;
+        margin-left: 10px;
+        width: 135px;
+        text-align: center;
+        font-size: large;
+        color: black;
+        background-color: darkgrey;
+    }
+    .sign-btn:hover{
+        background-color: white;
+        color: black;
+    }
+    .login-btn{
+        padding: 7px 7px 7px 7px;;
+        margin-left: 10px;
+        width: 235px;
+        text-align: center;
+        font-size: large;
+        color : black;
+        background-color : darkgrey;
+    }
+    .login-btn:hover{
+        background-color: white;
+        color: black;
+    }
+</style>
+
+<html>
+    <head>
+        <title>Login</title>
+    </head>
+    <body>
+        {% if messages %}
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        {% endif %}
+        <h3>You Can Login here....</h3>
+        <div class="container">
+            <form method="POST" class="form-container">
+                {% csrf_token %} 
+                {{ form.as_p }}
+                <button type="submit" class="sign-btn">Login</button>
+            </form>
+            <a href="{% url 'register' %}"><button class="login-btn">Don't have a account?</button></a>
+        </div>
+    </body>
+</html>
