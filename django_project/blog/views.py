@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 def index(request):
     return render(request,'blog/main.html')
 
+#it is home 
 @login_required
 def home(request):
     context = {
