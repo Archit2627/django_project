@@ -3,7 +3,7 @@ from .models import Post
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 
-
+#it is index function
 def index(request):
     return render(request,'blog/main.html')
 
