@@ -8,6 +8,7 @@ def index(request):
     return render(request,'blog/main.html')
 
 #it is home 
+#it is another comment
 @login_required
 def home(request):
     context = {
