@@ -2,9 +2,10 @@ version: '3'
 
 services: 
   web:
+    image: archit77/django_project_web 
     build: .
     command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
     volumes:
-      - .:archit77/django_project
+      - .:/django_project
     ports:
       - "8000:8000"
