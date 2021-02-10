@@ -7,4 +7,4 @@ RUN mkdir /django_project
 WORKDIR /django_project
 COPY ./django_project/requirements.txt ./django_project/requirements.txt
 ADD . /django_project
-RUN pip install -r requirements.txt
+RUN pip install -r ./django_project/requirements.txt
