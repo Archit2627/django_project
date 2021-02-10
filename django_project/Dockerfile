@@ -3,7 +3,7 @@ FROM python:3.7
 
 #Create environment
 ENV PYTHONUNBUFFERED 1
-COPY requirements.txt ./django_project
+COPY requirements.txt ./django_project/requirements.txt
 RUN mkdir /django_project
 WORKDIR /django_project
 
