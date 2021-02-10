@@ -3,9 +3,8 @@ FROM python:3.7
 
 #Create environment
 ENV PYTHONUNBUFFERED 1
-COPY requirements.txt ./django_project/requirements.txt
 RUN mkdir /django_project
 WORKDIR /django_project
-
+COPY ./django_project/requirements.txt ./django_project/requirements.txt
 ADD . /django_project
 RUN pip install -r requirements.txt
